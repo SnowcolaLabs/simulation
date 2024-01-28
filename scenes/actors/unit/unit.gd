@@ -5,8 +5,7 @@ extends Area2D
 @onready var grid: Grid = main.get_node("Grid")
 @onready var pathfinder: Pathfinder = grid.pathfinder
 
-var data: UnitData
-var speed: float = 100.0
+var data: UnitData = UnitData.new()
 
 var path: PackedVector2Array
 var pos: Vector2:
@@ -15,6 +14,9 @@ var pos: Vector2:
 	set(v):
 		pos = v
 		
+func _ready() -> void:
+	pos = grid.worldToGrid(position)
+
 func _process(delta: float) -> void:
 	move(delta)
 
@@ -26,7 +28,7 @@ func move(delta: float) -> void:
 			pos = grid.worldToGrid(path[0])
 			path.remove_at(0)
 		else: 
-			position += (path[0] - position).normalized() * speed * delta
+			position += (path[0] - position).normalized() * data.speed * delta
 			
 		
 func _input(event: InputEvent) -> void:
@@ -34,3 +36,4 @@ func _input(event: InputEvent) -> void:
 		if event.pressed:
 			var clicked: Vector2 = grid.worldToGrid(get_global_mouse_position())
 			path = pathfinder.get_grid_path(pos, clicked)
+			print(clicked, grid.worldToGrid(position))

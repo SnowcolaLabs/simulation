@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FloorData" load_steps=2 format=3 uid="uid://bmoq0snbuebjb"]
+
+[ext_resource type="Script" path="res://custom_resources/floor_data.gd" id="1_5s41t"]
+
+[resource]
+script = ExtResource("1_5s41t")
+name = "tree"
+id = 4
+coords = Vector2(0, 0)

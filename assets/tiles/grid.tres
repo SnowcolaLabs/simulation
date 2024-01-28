@@ -1,0 +1,48 @@
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://bu7koj5ws03au"]
+
+[ext_resource type="Texture2D" uid="uid://c3blgq0fxwfl4" path="res://assets/tiles/missing.png" id="1_u5jr0"]
+[ext_resource type="Texture2D" uid="uid://bnnub524l13g3" path="res://assets/tiles/dirt.png" id="1_yrw8k"]
+[ext_resource type="Texture2D" uid="uid://bwv6l3a0do5av" path="res://assets/tiles/grass.png" id="2_1v5oe"]
+[ext_resource type="Texture2D" uid="uid://chkdpsuqk01yw" path="res://assets/tiles/woodwall.png" id="3_k8xwt"]
+[ext_resource type="Texture2D" uid="uid://cmfow600ksee6" path="res://assets/tiles/tree.png" id="4_elmlp"]
+[ext_resource type="Texture2D" uid="uid://046jg12gcb0w" path="res://assets/tiles/stonewall.png" id="5_et6aq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dputd"]
+texture = ExtResource("1_yrw8k")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_biq25"]
+texture = ExtResource("2_1v5oe")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ynyag"]
+texture = ExtResource("3_k8xwt")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4uymt"]
+texture = ExtResource("4_elmlp")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x704n"]
+texture = ExtResource("5_et6aq")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g0uui"]
+resource_name = "missing"
+texture = ExtResource("1_u5jr0")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(128, 128)
+sources/6 = SubResource("TileSetAtlasSource_g0uui")
+sources/11 = SubResource("TileSetAtlasSource_ynyag")
+sources/0 = SubResource("TileSetAtlasSource_dputd")
+sources/1 = SubResource("TileSetAtlasSource_biq25")
+sources/5 = SubResource("TileSetAtlasSource_x704n")
+sources/4 = SubResource("TileSetAtlasSource_4uymt")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dtenssscymfgj"]
 
 [ext_resource type="Script" path="res://scenes/actors/unit/unit.gd" id="1_4d6fy"]
-[ext_resource type="Texture2D" uid="uid://b2vxo2m2g7tfp" path="res://icon.svg" id="2_o3184"]
+[ext_resource type="Texture2D" uid="uid://3dp8tb051x1a" path="res://assets/tiles/colonist.png" id="2_eogb7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxa2l"]
 size = Vector2(128, 128)
@@ -10,7 +10,10 @@ size = Vector2(128, 128)
 script = ExtResource("1_4d6fy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_o3184")
+texture_filter = 1
+texture = ExtResource("2_eogb7")
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(64, 64)
 shape = SubResource("RectangleShape2D_xxa2l")

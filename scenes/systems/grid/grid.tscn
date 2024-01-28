@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://btbfbfpdmorq2"]
+[gd_scene load_steps=4 format=3 uid="uid://btbfbfpdmorq2"]
 
 [ext_resource type="Script" path="res://scenes/systems/grid/grid.gd" id="1_r4cy2"]
+[ext_resource type="TileSet" uid="uid://bu7koj5ws03au" path="res://assets/tiles/grid.tres" id="1_tog8r"]
 [ext_resource type="Script" path="res://scenes/systems/grid/Pathfinding.gd" id="2_oqgsj"]
 
-[node name="Grid" type="Node2D" node_paths=PackedStringArray("pathfinder")]
+[node name="Grid" type="TileMap" node_paths=PackedStringArray("pathfinder")]
+tile_set = ExtResource("1_tog8r")
+format = 2
+layer_0/name = "floor"
+layer_1/name = "building"
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array()
 script = ExtResource("1_r4cy2")
 debug = true
 pathfinder = NodePath("Pathfinding")

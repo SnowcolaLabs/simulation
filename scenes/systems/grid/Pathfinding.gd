@@ -7,10 +7,6 @@ var a_star: AStar2D = AStar2D.new()
 
 const DIRECTIONS = [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT]
 
-func _ready() -> void:
-	#initialize()
-	pass
-
 func add_points() -> void:
 	var current_id := 0
 	for point: Vector2 in grid.grid:
@@ -34,7 +30,7 @@ func connect_point(point: Vector2) -> void:
 	for direction: Vector2 in DIRECTIONS:
 		var neighbour := point + direction
 		var neighbour_id := get_point_id(neighbour)
-		if grid.grid.has(neighbour) and grid.grid[neighbour] == null: # test naviggation ellogibility here
+		if grid.grid.has(neighbour) and grid.grid[neighbour].navigable: 
 			a_star.connect_points(point_id, neighbour_id)
 
 func disconnect_point(point: Vector2) -> void:
