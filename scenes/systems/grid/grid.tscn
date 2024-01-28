@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://btbfbfpdmorq2"]
+
+[ext_resource type="Script" path="res://scenes/systems/grid/grid.gd" id="1_r4cy2"]
+[ext_resource type="Script" path="res://scenes/systems/grid/Pathfinding.gd" id="2_oqgsj"]
+
+[node name="Grid" type="Node2D" node_paths=PackedStringArray("pathfinder")]
+script = ExtResource("1_r4cy2")
+debug = true
+pathfinder = NodePath("Pathfinding")
+
+[node name="Debug" type="Node2D" parent="."]
+
+[node name="Units" type="Node2D" parent="."]
+
+[node name="Pathfinding" type="Node" parent="." node_paths=PackedStringArray("grid")]
+script = ExtResource("2_oqgsj")
+grid = NodePath("..")

@@ -5,6 +5,10 @@ var zoom_min: float = 0.001
 var zoom_max: float = 2.0
 var drag_sensitivity: float = 1.0
 
+@onready var start_pos: Vector2 = get_viewport_rect().size / 2
+
+func _ready() -> void:
+	position = start_pos
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.is_mouse_button_pressed(MOUSE_BUTTON_MIDDLE):

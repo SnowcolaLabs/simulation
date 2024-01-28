@@ -5,24 +5,25 @@ extends Node2D
 @export var height: int = 12
 @export var cell_size: int = 128
 @export var debug: bool = false
+@export var pathfinder: Pathfinder
 
 var grid: Dictionary = {}
 
 
-func generate_grid():
+func generate_grid() -> void:
 	for x in width:
 		for y in height:
 			grid[Vector2(x,y)] = null
 			if debug:
-				var rect = ReferenceRect.new()
+				var rect := ReferenceRect.new()
 				rect.position = gridToWorld(Vector2(x, y))
 				rect.size = Vector2(cell_size, cell_size)
 				rect.editor_only = false
-				add_child(rect)
-				var label = Label.new()
+				$Debug.add_child(rect)
+				var label := Label.new()
 				label.position = gridToWorld(Vector2(x, y))
 				label.text = "(%s, %s)" % [x, y]
-				add_child(label)
+				$Debug.add_child(label)
 			
 func gridToWorld(pos: Vector2) -> Vector2:
 	return pos * cell_size

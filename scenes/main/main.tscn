@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2ppqb7se1cro"]
+
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_qg5e4"]
+[ext_resource type="PackedScene" uid="uid://btbfbfpdmorq2" path="res://scenes/systems/grid/grid.tscn" id="2_r2bkn"]
+[ext_resource type="PackedScene" uid="uid://dtenssscymfgj" path="res://scenes/actors/unit/unit.tscn" id="3_aq4r0"]
+[ext_resource type="Script" path="res://scenes/systems/camera/camera.gd" id="3_q0msp"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_qg5e4")
+
+[node name="Grid" parent="." instance=ExtResource("2_r2bkn")]
+
+[node name="Unit" parent="Grid/Units" index="0" instance=ExtResource("3_aq4r0")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(2.08165e-12, 2.08165e-12)
+script = ExtResource("3_q0msp")
+
+[node name="Marker2D" type="Marker2D" parent="Camera2D"]
+position = Vector2(256, 384)
+
+[editable path="Grid"]
